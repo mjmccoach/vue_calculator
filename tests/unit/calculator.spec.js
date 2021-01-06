@@ -47,4 +47,19 @@ describe('App.vue', () => {
     wrapper.vm.numberClick('8');
     expect(wrapper.vm.runningTotal).to.equal(5678)
   })
+
+  it('should be able to chain multiple operations together', () => {
+    const wrapper = shallowMount(App)
+
+    wrapper.vm.operatorClick('+');
+    wrapper.vm.numberClick('5');
+    wrapper.vm.operatorClick('*');
+    wrapper.vm.numberClick('3');
+    wrapper.vm.operatorClick('/');
+    wrapper.vm.numberClick('3');
+    wrapper.vm.operatorClick('-');
+    wrapper.vm.numberClick('2');
+    wrapper.vm.operatorClick('=');
+    expect(wrapper.vm.runningTotal).to.equal(3)
+  })
 })
