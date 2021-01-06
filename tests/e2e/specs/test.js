@@ -18,6 +18,12 @@ describe('calculator', () => {
   });
   
   it('should be able to have the operator buttons update the display of running total', () => {
+    cy.get('#operator_add').click();
+    cy.get('#number3').click();
+    cy.get('#operator_equals').click();
+    cy.get('.display').should('contain', '3');
+  })
+  it('should be able to chain multiple operators', () => {
     cy.get('#operator_add').click(); 
     cy.get('#number5').click();
     cy.get('#operator_subtract').click();
@@ -25,4 +31,6 @@ describe('calculator', () => {
     cy.get('#operator_equals').click();
     cy.get('.display').should('contain', '2');
   });
+
+  
 })
