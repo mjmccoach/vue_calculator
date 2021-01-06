@@ -41,7 +41,7 @@ describe('calculator', () => {
     cy.get('.display').should('contain', '-4');
   })
 
-  it('should display undefined when diving by zero', () => {
+  it('should display Error when dividng by zero', () => {
     cy.get('#number9').click();
     cy.get('#operator_divide').click();
     cy.get('#number0').click();
@@ -49,7 +49,7 @@ describe('calculator', () => {
     cy.get('.display').should('contain', 'Undefined')
   })
 
-  it('should display infinity if the number is too large to fit the display', () => {
+  it('should display infinity if the number is too large for the display', () => {
     cy.get('#number9').click();
     cy.get('#number9').click();
     cy.get('#number9').click();
