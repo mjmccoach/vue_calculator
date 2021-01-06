@@ -32,5 +32,14 @@ describe('calculator', () => {
     cy.get('.display').should('contain', '2');
   });
 
+  it('should be able to display negative numbers', () => {
+    cy.get('#operator_add').click()
+    cy.get('#number5').click()
+    cy.get('#operator_subtract').click()
+    cy.get('#number9').click()
+    cy.get('#operator_equals').click()
+    cy.get('.display').should('contain', '-4');
+  })
+
   
 })
