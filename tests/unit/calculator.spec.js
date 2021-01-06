@@ -17,4 +17,11 @@ describe('App.vue', () => {
     wrapper.vm.add('1');
     expect(wrapper.vm.runningTotal).to.equal(5)
   })
+
+  it('should be able to subtract four from seven', () => {
+    const wrapper = shallowMount(App)
+    wrapper.vm.previousTotal = 7
+    wrapper.vm.subtract('3');
+    expect(wrapper.vm.runningTotal).to.equal(4)
+  })
 })
